@@ -1,10 +1,3 @@
-let inputText = document.getElementById("text");
-let values = inputText.value;
-
-
-let camelCase = document.querySelector("#camel-case");
-let pascalCase = document.querySelector("#pascal-case");
-
 //console.log(camelCase);
 
 //camel case
@@ -78,12 +71,43 @@ const screamingKebab = (str) => {
 
 };
 
+//convert button
+const convertBtn = document.getElementById("convert-btn");
+convertBtn.addEventListener('click', convert);
+
+function convert() {
+    //console.log("hi");
+    let inputText = document.getElementById("text");
+    let inputValues = inputText.value;
+
+    let camelCase = document.querySelector("#camel-case");
+    camelCase.textContent = camel(inputValues);
+
+    let pascalCase = document.querySelector("#pascal-case");
+    pascalCase.textContent = pascal(inputValues);
+
+    let snakeCase = document.querySelector("#snake-case");
+    snakeCase.textContent = snake(inputValues);
+
+    let scrSnake = document.querySelector("#screaming-snake-case");
+    scrSnake.textContent = screamingSnake(inputValues);
+
+    let kebabCase = document.querySelector("#kebab-case");
+    kebabCase.textContent = kebab(inputValues);
+
+    let scrkeb = document.querySelector("#screaming-kebab-case");
+    scrkeb.textContent = screamingKebab(inputValues);
 
 
-console.log(camel("hi developers wel come"));
+
+
+}
+
+
+/* console.log(camel("hi developers wel come"));
 console.log(pascal("hi developers wel come"));
 console.log(snake("hi developers Wel come"));
 console.log(screamingSnake("hi developers Wel come"));
 console.log(kebab("hi developers Wel come"));
 console.log(screamingKebab("hi developers Wel come"));
-//inputText.addEventListener("input", pascal);
+//inputText.addEventListener("input", pascal); */
